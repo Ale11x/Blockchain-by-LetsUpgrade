@@ -1,0 +1,28 @@
+pragma solidity >=0.4.22 <0.7.0;
+
+contract ReportCardSubmission{
+    string public StudentName;
+    string public RollNo;
+    string public Batch;
+    uint public MarkSub1;
+    uint public MarkSub2;
+    uint public MarkSub3;
+    uint public MarkSub4;
+    string public status;
+    
+    function LandRecord(string newStudentName,string newRollNo,string StudBatch,uint newMarkSub1,uint newMarkSub2,uint newMarkSub3,uint newMarkSub4,string CurrentStatus)public{
+    StudentName = newStudentName;
+    RollNo = newRollNo;
+    Batch = StudBatch;
+    MarkSub1 = newMarkSub1;
+    MarkSub2 = newMarkSub2;
+    MarkSub3 = newMarkSub3;
+    MarkSub4 = newMarkSub4;
+    status = CurrentStatus;
+    }
+    
+    
+    function getStudentDetails()public view returns(string,string,string,uint,uint,uint,uint,string){
+        return(StudentName,RollNo,Batch,MarkSub1,MarkSub2,MarkSub3,MarkSub4,status);
+    }
+}
